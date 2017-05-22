@@ -70,20 +70,44 @@
   </div>
 
   <!-- 产品列表-->
-<div class="row productList">
-  <% @products.each do |product| %>
-    <div class="col-sm-2 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail img-responsive") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail img-responsive") %>
+<div class="row">
+    <% @products.each do |product| %>
+    <div class="col-md-3 col-sm-6">
+      <span class="thumbnail">
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail img-responsive") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail img-responsive") %>
+          <% end %>
         <% end %>
-      <% end %>
-      <span><%= product.title %>￥<%= product.price %></span>
+          <h4><%= product.title %></h4>
+          <div class="ratings">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+              </div>
+          <p><%= product.description %></p>
+          <hr class="line">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <p class="price"><%= product.price %>￥</p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <% if product.quantity.present? && product.quantity > 0 %>
+                <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info right") %>
+              <% else %>
+                 Sold out
+              <% end %>
+            </div>
+          </div>
+      </span>
     </div>
-  <% end %>
+    <% end %>
 </div>
+<!-- 产品列表尾部 -->
 
 <!--footer-->
 <footer>
@@ -125,6 +149,10 @@
           <li><i class="fa fa-twitter social-icon twitter" aria-hidden="true"></i></li>
           <li><i class="fa fa-google-plus social-icon google" aria-hidden="true"></i></li>
         </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h6 class="heading7">Web designed by</h6>
+        <p>赵鑫熙 & 蒋小兵</p>
       </div>
     </div>
   </div>
