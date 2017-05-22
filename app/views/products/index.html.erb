@@ -56,7 +56,18 @@
   <!-- 筛选项 -->
   <div class="row orderList bg-color1">
     <div class="orderList-item bg-color2">
-      <h4>categroy</h4>
+      <h4>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">
+            category
+          </a>
+          <ul class="dropdown-menu">
+            <% @categories.each do |category| %>
+            <li><%= link_to(category.name, products_path(category: category.id))%></li>
+            <% end %>
+          </ul>
+        </li>
+      </h4>
     </div>
     <div class="orderList-item bg-color3">
       <h4>price</h4>
