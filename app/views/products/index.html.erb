@@ -1,24 +1,4 @@
-<div class="row">
-  <div class="menu">
-    <div class="menuList">
-      <div class=" menuList-item col-sm-2">
-        <h5>PRODUCT</h5> <!--定义产品名字-->
-      </div>
-      <div class=" menuList-item col-sm-2">
-        <h5>PRODUCT</h5><!--定义产品名字-->
-      </div>
-      <div class=" menuList-item col-sm-4">
-        <h2 class="logo">SELECTION</h2><!--产品LOGO-->
-      </div>
-      <div class="menuList-item col-sm-2">
-        <h5>PRODUCT</h5><!--定义产品名字-->
-      </div>
-      <div class="menuList-item col-sm-2">
-        <h5>PRODUCT</h5><!--定义产品名字-->
-      </div>
-    </div>
-  </div>
-</div>
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- 轮播指标 -->
   <ol class="carousel-indicators">
@@ -58,7 +38,7 @@
     <div class="orderList-item bg-color2">
       <h4>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown">
+          <a class="dropdown-toggle orderList-item" data-toggle="dropdown">
             category
           </a>
           <ul class="dropdown-menu">
@@ -109,7 +89,7 @@
             </div>
             <div class="col-md-6 col-sm-6">
               <% if product.quantity.present? && product.quantity > 0 %>
-                <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info right") %>
+                <%= link_to("添加到购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info right") %>
               <% else %>
                  Sold out
               <% end %>
@@ -163,7 +143,7 @@
         </ul>
       </div>
       <div class="col-md-3 col-sm-6 footer-col">
-        <h6 class="heading7">Web designed by</h6>
+        <h6 class="heading7">网站设计</h6>
         <p>赵鑫熙 & 蒋小兵</p>
       </div>
     </div>
@@ -178,12 +158,11 @@
     </div>
     <div class="col-md-6">
       <ul class="bottom_ul">
-        <li><a href="#">SELECTION Club</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">company site's</a></li>
-        <li><a href="#">Contact us</a></li>
-        <li><a href="#">Site Map</a></li>
+        <li><a href="#">SELECTION 俱乐部</a></li>
+        <li><a href="#">关于我们</a></li>
+        <li><a href="#">博客</a></li>
+        <li><a href="#">公司地址</a></li>
+        <li><a href="#">联系我们</a></li>
       </ul>
     </div>
   </div>

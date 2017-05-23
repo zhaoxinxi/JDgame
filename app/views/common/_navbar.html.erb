@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbarContent">
-            <a class="navbar-brand" href="/">Leisure On The Carpet</a>
+            <a class="navbar-brand" href="/">撒欢——在地毯上的自由</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -10,13 +10,13 @@
             <ul class="nav navbar-nav navbar-right">
               <li>
                 <%= link_to carts_path do %>
-                Cart<i class="fa fa-shopping-cart"></i>(<%= current_cart.products.count%>)
+                购物车<i class="fa fa-shopping-cart"></i>(<%= current_cart.products.count%>)
                 <% end %>
               </li>
                 <li>
                   <% if !current_user %>
-                    <li><%= link_to("Register", new_user_registration_path) %> </li>
-                    <li><%= link_to(content_tag(:i, 'Log in', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                    <li><%= link_to("注册", new_user_registration_path) %> </li>
+                    <li><%= link_to(content_tag(:i, '登录', class: 'fa fa-sign-in'), new_user_session_path) %></li>
                   <% else %>
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -41,3 +41,30 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+<div class="row">
+  <div class="menu">
+    <div class="menuList">
+      <div class=" menuList-item col-sm-1 col-sm-push-2">
+        <h5>羊羔绒地毯</h5> <!--定义产品名字-->
+      </div>
+      <div class=" menuList-item col-sm-1 col-sm-push-2">
+        <h5>短毛绒地毯</h5><!--定义产品名字-->
+      </div>
+      <div class="menuList-item col-sm-1 col-sm-push-2">
+        <h5>长毛绒地毯</h5><!--定义产品名字-->
+      </div>
+      <div class=" menuList-item col-sm-6">
+        <h2 class="logo">SELECTION</h2><!--产品LOGO-->
+      </div>
+      <div class="menuList-item col-sm-1  col-sm-pull-2">
+        <h5>动物纹地毯</h5><!--定义产品名字-->
+      </div>
+      <div class="menuList-item col-sm-1  col-sm-pull-2">
+        <h5>几何纹地毯</h5><!--定义产品名字-->
+      </div>
+      <div class="menuList-item col-sm-1  col-sm-pull-2">
+        <h5>混染厚地毯</h5><!--定义产品名字-->
+      </div>
+    </div>
+  </div>
+</div>
