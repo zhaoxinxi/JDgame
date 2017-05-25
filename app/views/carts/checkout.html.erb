@@ -51,18 +51,18 @@
 
           <legend> 订购人</legend>
           <div class="form-group col-lg-6">
-            <%= f.input :billing_name  %>
+            <%= f.input :billing_name ,input_html: {value:"zxx"}  %>
           </div>
           <div class="form-group col-lg-6">
-            <%= f.input :billing_address  %>
+            <%= f.input :billing_address ,input_html: {value:"河北省秦皇岛市随便买路"}  %>
           </div>
 
           <legend> 收货人</legend>
           <div class="form-group col-lg-6">
-           <%= f.input :shipping_name  %>
+           <%= f.input :shipping_name ,input_html: {value:"jxb"}  %>
           </div>
           <div class="form-group col-lg-6">
-            <%= f.input :shipping_address  %>
+            <%= f.input :shipping_address ,input_html:{value:"江苏省南京市反正不发货街"}  %>
           </div>
 
         <div class="checkout">
