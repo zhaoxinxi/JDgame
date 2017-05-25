@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Coupons::Engine => '/', as: 'coupons_engine'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do

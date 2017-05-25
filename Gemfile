@@ -36,6 +36,9 @@ gem "carrierwave"
 gem "mini_magick"
 gem 'font-awesome-rails'
 gem "aasm"
+gem 'paginate'
+gem 'coupons', github: 'zhaoxinxi/coupons'
+
 
 gem 'letter_opener', group: :development
 
@@ -60,4 +63,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'pg'
-end 
+end
