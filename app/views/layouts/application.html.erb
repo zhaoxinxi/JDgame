@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="background">
+<html>
     <head>
         <title>JDstore </title>
         <%= csrf_meta_tags %>
@@ -9,15 +9,13 @@
         <link href="https://fonts.googleapis.com/css?family=Metamorphous" rel="stylesheet">
     </head>
 
-    <body>
+    <body style="max-width:1600px; margin-left:auto; margin-right:auto;">
+          <div class="container-fluid">
+              <%= render "common/navbar" %>
+              <%= render "common/flashes" %>
+              <%= yield %>
 
-        <div class="container-fluid">
-            <%= render "common/navbar" %>
-            <%= render "common/flashes" %>
-            <%= yield %>
-        </div>
-
-        <%= render "common/footer" %>
-
+          </div>
+            <%= render "common/footer" %>
     </body>
 </html>
