@@ -18,6 +18,9 @@ class Cart < ApplicationRecord
     end
     sum
   end
+  def truetotal_price
+     Coupons.apply(self.code, amount: self.total_price).to_a.third.second
+  end
 
   def clean!
     cart_items.destroy_all
