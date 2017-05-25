@@ -53,12 +53,32 @@
       </tbody>
     </table>
 
-    <br>
+    <hr>
+    <div class="">
+      <%  @coupons.each do |c| %>
+       <div class="">
+         暗号：<b><%= c.code %></b> 功能：<b><%= c.description %><br></b>
+         有效期：<%= c.valid_from %>到<b><%= c.valid_until %></b>
+       </div>
+
+      <% end %>
+    </div>
+    <hr>
+     <%= simple_form_for current_cart, url: cart_path(current_cart) do |f| %>
+        <%= f.input :code,:label => "输入暗号，享受优惠" %>
+        <%= f.submit "核对暗号",data: { disable_with: "Submiting..." } %>
+     <% end %>
+     正在使用暗号为<b><%=current_cart.code %></b>的优惠券，
 
     <div class="total clearfix">
       <span class="pull-right">
-        总计<%= render_cart_total_price(current_cart)%>RMB
+        商品总计<%= render_cart_total_price(current_cart)%>RMB
       </span>
+    </div>
+    <div class="total clearfix">
+       <span class="pull-right">
+         实付金额<b><%= render_cart_turetotal_price(current_cart) %></b>RMB
+       </span>
     </div>
 
     <hr>

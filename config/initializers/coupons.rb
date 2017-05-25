@@ -11,6 +11,6 @@ Coupons.configure do |config|
   # This is useful for creating coupons tied to a specific product or category.
   #
   # config.resolvers = [Coupons::Resolver]
-
+  
 
 end
