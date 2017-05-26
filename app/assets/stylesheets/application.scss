@@ -67,7 +67,7 @@ a {
     text-decoration: none;
 }
 a:hover, a:focus {
-    color: red;
+    color: rgba(192,132,82,1);
     text-decoration:none;
 }
  /*====页面整体====*/
@@ -227,23 +227,6 @@ a:hover, a:focus {
 }
 
 /*菜单*/
-// .menu {
-//   width: 100%;
-//   margin:0px auto -32px;
-// }
-//
-// .menuList {
-//   width: 100%;
-//   margin: 40px auto;
-//   height: 42px;
-// }
-//
-// .menuList-item {
-//   font-family: 'Metamorphous', cursive;
-//   text-align: center;
-//
-
-// }
 
 .menu{
   width:100%;
