@@ -1,0 +1,199 @@
+<!-- 筛选项 -->
+<div class="row orderList bg-color1">
+  <div class="orderList-item bg-color2">
+    <h4>
+      <li class="dropdown">
+        <a class="dropdown-toggle orderList-item" data-toggle="dropdown">
+          category
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to("全部", products_path)%></li>
+          <% @categories.each do |category| %>
+          <li><%= link_to(category.name, products_path(category: category.id))%></li>
+          <% end %>
+        </ul>
+      </li>
+    </h4>
+  </div>
+  <div class="orderList-item bg-color3">
+    <h4>price</h4>
+  </div>
+  <div class="orderList-item bg-color4">
+    <h4>date</h4>
+  </div>
+  <div class="orderList-item bg-color5">
+    <h4>popular</h4>
+  </div>
+</div>
+
+<!-- 产品列表-->
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-md-3 col-sm-6">
+    <span class="thumbnail">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail img-responsive") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail img-responsive") %>
+        <% end %>
+      <% end %>
+        <h4><%= product.title %></h4>
+        <div class="ratings">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+        <p><%= product.description %></p>
+        <hr class="line">
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <p class="price"><%= product.price %>￥</p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <% if product.quantity.present? && product.quantity > 0 %>
+              <%= link_to("添加到购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info right") %>
+            <% else %>
+               Sold out
+            <% end %>
+          </div>
+        </div>
+    </span>
+  </div>
+  <% end %>
+</div>
+<!-- 产品列表尾部 -->
+
+
+<!--footer-->
+
+
+<footer class="navbar-fixed-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 footer-col">
+        <div class="logofooter"> SELECTION</div>
+        <p>我们 专注于制作即舒适又美观的地毯。当你触摸地毯的时候，你会惊讶于它的柔软和弹性。在所有品类里，你可以有很多的选择。你会发现我们的设计，用在您家里的任何地方都是一个令人舒心和审美的过程，希望你能喜欢。</p>
+        <p><i class="fa fa-map-pin"></i> 地址：南京 江宁区</p>
+        <p><i class="fa fa-phone"></i> 电话： 12345678909</p>
+        <p><i class="fa fa-envelope"></i> 邮箱： 47627598@qq.com</p>
+
+      </div>
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h6 class="heading7">LINKS</h6>
+        <ul class="footer-ul">
+          <li><a href="#"> 客户使用手册</a></li>
+          <li><a href="#"> 客户反馈</a></li>
+          <li><a href="#"> FAQ</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h6 class="heading7">最新消息</h6>
+        <div class="post">
+          <p>中国交易展热卖产品<span>2017年4月3日</span></p>
+          <p>中国广交会使用地毯<span>J2016年7月3日</span></p>
+          <p>地毯杂志特别推荐<span>2015年6月14日</span></p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h6 class="heading7">社交网络</h6>
+        <ul class="footer-social">
+          <li><i class="fa fa-linkedin social-icon linked-in" aria-hidden="true"></i></li>
+          <li><i class="fa fa-facebook social-icon facebook" aria-hidden="true"></i></li>
+          <li><i class="fa fa-twitter social-icon twitter" aria-hidden="true"></i></li>
+          <li><i class="fa fa-google-plus social-icon google" aria-hidden="true"></i></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h6 class="heading7">网站设计</h6>
+        <p>赵鑫熙 & 蒋小兵</p>
+      </div>
+    </div>
+  </div>
+
+<!--最底部的footer -->
+
+<div class="copyright">
+  <div class="container">
+    <div class="col-md-6">
+      <p>© 2017 - All Rights with JDStore</p>
+    </div>
+    <div class="col-md-6">
+      <ul class="bottom_ul">
+        <li><a href="#">SELECTION 俱乐部</a></li>
+        <li><a href="#">关于我们</a></li>
+        <li><a href="#">博客</a></li>
+        <li><a href="#">公司地址</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</footer>
+
+
+
+轮播图像
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- 轮播指标 -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0"></li>
+    <li data-target="#myCarousel" data-slide-to="1 "class="active" ></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+  <!-- 轮播项目 -->
+  <div class="carousel-inner image-responsive">
+    <div class="item">
+      <img src="http://oooly5avu.bkt.clouddn.com/blue%20rug.jpg" alt="blue rug">
+    </div>
+    <div class="item active">
+      <img src="http://oooly5avu.bkt.clouddn.com/green%20rug.jpg" alt="green rug">
+    </div>
+    <div class="item">
+      <img src="http://oooly5avu.bkt.clouddn.com/familiy%20rug.jpg" alt="familiy rug">
+    </div>
+    <div class="item">
+      <img src="http://oooly5avu.bkt.clouddn.com/party%20rug.jpg" alt="party rug">
+    </div>
+  </div>
+  <!-- 轮播导航 -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+  <!-- 筛选项 -->
+  <div class="row orderList bg-color1">
+    <div class="orderList-item bg-color2">
+      <h4>
+        <li class="dropdown">
+          <a class="dropdown-toggle orderList-item" data-toggle="dropdown">
+            category
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to("全部", products_path)%></li>
+            <% @categories.each do |category| %>
+            <li><%= link_to(category.name, products_path(category: category.id))%></li>
+            <% end %>
+          </ul>
+        </li>
+      </h4>
+    </div>
+    <div class="orderList-item bg-color3">
+      <h4>price</h4>
+    </div>
+    <div class="orderList-item bg-color4">
+      <h4>date</h4>
+    </div>
+    <div class="orderList-item bg-color5">
+      <h4>popular</h4>
+    </div>
+  </div>
