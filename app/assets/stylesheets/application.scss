@@ -246,7 +246,7 @@ a:hover, a:focus {
 // }
 
 .menu{
-  width:1400px;
+  width:100%;
   margin-right: auto;
   margin-left: auto;
 
@@ -255,7 +255,7 @@ a:hover, a:focus {
     font-family: cursive;
     float:left;
     height:40px;
-    width:170px;
+    width:12%;
     text-align: center;
     margin-top: 40px;
   }
@@ -263,10 +263,10 @@ a:hover, a:focus {
 .logo{
     font-size: 47px;
     font-family: 'Metamorphous', cursive;
-    margin:25px 100px 10px 20px;
+    margin:25px 2% 10px 2%;
     float:left;
     height:40px;
-    width:200px;
+    width:24%;
     text-align: center;
   }
 
