@@ -24,4 +24,5 @@ config/database.yml
 .tags
 .tags.tmp
 tags
+.tags1
 public/uploads
