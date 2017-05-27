@@ -318,6 +318,39 @@ a:hover, a:focus {
   margin-right: 0;
 }
 
+.sign-up-background{
+  background-image:url(http://oooly5avu.bkt.clouddn.com/green%20rug.jpg);
+  height: 900px;
+}
+
+.sign-up-position{
+margin-left:18%;
+margin-top:15%;
+}
+
+
+.log-in-background{
+  background-image:url(http://oooly5avu.bkt.clouddn.com/shutterstock_132986507_meitu_1.jpg);
+  height: 900px;
+}
+
+.log-in-position{
+margin-left:73%;
+margin-top:14%;
+}
+
+
+label {
+    display: inline-block;
+    max-width: 63%;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 19px;
+}
+
+
+
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese');
 body{
   font-family: 'Quicksand', sans-serif;
