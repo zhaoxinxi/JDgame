@@ -1,0 +1,78 @@
+<div class="sign-up-background">
+  <div class="col-md-3 col-sm-3 sign-up-position">
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+    <footer>
+          <div class="col-md-3 col-sm-6 footer-col" style="margin-left:50px;">
+            <div class="logofooter"> SELECTION</div>
+            <p>我们 专注于制作即舒适又美观的地毯。当你触摸地毯的时候，你会惊讶于它的柔软和弹性。在所有品类里，你可以有很多的选择。你会发现我们的设计，用在您家里的任何地方都是一个令人舒心和审美的过程，希望你能喜欢。</p>
+            <p><i class="fa fa-map-pin"></i> 地址：南京 江宁区</p>
+            <p><i class="fa fa-phone"></i> 电话： 12345678909</p>
+            <p><i class="fa fa-envelope"></i> 邮箱： 47627598@qq.com</p>
+
+          </div>
+          <div class="col-md-2 col-sm-6 footer-col" style="margin-left:50px;">
+            <h6 class="heading7">LINKS</h6>
+            <ul class="footer-ul">
+              <li><a href="#"> 客户使用手册</a></li>
+              <li><a href="#"> 客户反馈</a></li>
+              <li><a href="#"> FAQ</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 footer-col">
+            <h6 class="heading7">最新消息</h6>
+            <div class="post">
+              <p>中国交易展热卖产品<span>2017年4月3日</span></p>
+              <p>中国广交会使用地毯<span>J2016年7月3日</span></p>
+              <p>地毯杂志特别推荐<span>2015年6月14日</span></p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 footer-col">
+            <h6 class="heading7">社交网络</h6>
+            <ul class="footer-social">
+              <li><i class="fa fa-linkedin social-icon linked-in" aria-hidden="true"></i></li>
+              <li><i class="fa fa-facebook social-icon facebook" aria-hidden="true"></i></li>
+              <li><i class="fa fa-twitter social-icon twitter" aria-hidden="true"></i></li>
+              <li><i class="fa fa-google-plus social-icon google" aria-hidden="true"></i></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 footer-col">
+            <h6 class="heading7">网站设计</h6>
+            <p>赵鑫熙 & 蒋小兵</p>
+          </div>
+    </footer>
+    <!--最底部的footer -->
+
+      <div "col-sm-12">
+          <div class="copyright">
+              <div class="col-md-6">
+                <p>© 2017 - All Rights with JDStore</p>
+              </div>
+              <div class="col-md-6">
+                <ul class="bottom_ul">
+                  <li><a href="#">SELECTION 俱乐部</a></li>
+                  <li><a href="#">关于我们</a></li>
+                  <li><a href="#">博客</a></li>
+                  <li><a href="#">公司地址</a></li>
+                </ul>
+              </div>
+          </div>
+      </div>
+</div>
