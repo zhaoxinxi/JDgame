@@ -70,6 +70,25 @@ a:hover, a:focus {
     color: rgba(192,132,82,1);
     text-decoration:none;
 }
+/*====登录页面====*/
+.addtional {
+  a{
+  color: white;
+  text-decoration: none;
+  }
+}
+
+/*====注册页面====*/
+.addtional {
+  label{
+  display: inline-block;
+  max-width: 63%;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  }
+}
  /*====页面整体====*/
 
 
@@ -162,9 +181,8 @@ a:hover, a:focus {
 }
   .text {
     font: 400 14px/22px robotoregular;
-    color: #555;
+    color: black;
     margin: 0 0 26px 0;
-    text-align: center;
     line-height: 60px;
     letter-spacing: 2px;
 }
