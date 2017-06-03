@@ -1,6 +1,7 @@
 GIT
   remote: git://github.com/zhaoxinxi/coupons.git
   revision: 409cf4be39b07d2222a8e312604797df5888ff58
+
   specs:
     coupons (0.0.0)
       autoprefixer-rails
