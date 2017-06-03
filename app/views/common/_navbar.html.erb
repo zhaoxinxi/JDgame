@@ -2,7 +2,8 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbarContent">
-            <a class="navbar-brand" href="/">撒欢——在地毯上的自由</a>
+            <a class="navbar-brand" href="/">撒欢——在地毯上的自由</a>|
+            <a class="navbar-brand" href="/products">商品</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -26,10 +27,11 @@
                       <ul class="dropdown-menu">
                         <% if current_user.admin? %>
                          <li>
-                           <%= link_to("Admin 选单", admin_products_path ) %>
-                           <%= link_to("订单", account_orders_path ) %>
+                           <%= link_to("Admin选单", admin_products_path ) %>
+                           <%= link_to("Coupons管理", '/coupons') %>
                          </li>
                         <% end %>
+                        <li><%= link_to("订单", account_orders_path ) %></li>
                         <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                       </ul>
                     </li>
