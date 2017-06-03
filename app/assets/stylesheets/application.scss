@@ -210,18 +210,31 @@ a:hover, a:focus {
     margin-right: 50px;
     width: 250px;
     height: 490px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.28);
     text-align: center;
     font-family: cursive;
   }
+  .box:hover{
+  position: relative;
+  left: 2px;
+  top:2px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.28);
+
+  }
+
   .last-box{
     background: #fff;
     float: left;
     width: 250px;
     height: 490px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.28);
     text-align: center;
     font-family: cursive;
+  }
+
+  .last-box:hover{
+    position: relative;
+    left: 2px;
+    top:2px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.28);
   }
 
 .level-background4{
@@ -304,6 +317,7 @@ a:hover, a:focus {
   margin-top:5px;
   width:1600px;
   border-radius: 13px;
+  height:100px;
 }
 
 .product-title1{
@@ -445,7 +459,7 @@ li{
 
 footer {
   background-color:#0c1a1e;
-   min-height:350px;
+   min-height:274px;
    font-family: 'Metamorphous', cursive;
   }
 .footer-col { margin-top:50px; }

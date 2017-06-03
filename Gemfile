@@ -38,7 +38,8 @@ gem 'font-awesome-rails'
 gem "aasm"
 gem 'paginate'
 gem 'coupons', github: 'zhaoxinxi/coupons'
-
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 
 gem 'letter_opener', group: :development
 
