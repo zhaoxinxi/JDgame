@@ -26,3 +26,6 @@ config/database.yml
 tags
 .tags1
 public/uploads
+
+# Ignore application configuration
+/config/application.yml

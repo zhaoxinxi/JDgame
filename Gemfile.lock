@@ -1,7 +1,6 @@
 GIT
   remote: git://github.com/zhaoxinxi/coupons.git
   revision: 409cf4be39b07d2222a8e312604797df5888ff58
-
   specs:
     coupons (0.0.0)
       autoprefixer-rails
@@ -94,6 +93,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
     globalid (0.4.0)
@@ -250,6 +251,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   coupons!
   devise
+  figaro
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -273,4 +275,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.15.0
+   1.15.1
