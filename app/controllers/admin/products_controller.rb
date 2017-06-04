@@ -14,11 +14,17 @@ class Admin::ProductsController < ApplicationController
   def new
     @product=Product.new
     @categories = Category.all.map{|c| [c.name,c.id]}  #加上这句，map的作用很关键，转换成数组，建立应射
+    @photo = @product.photos.build
   end
 
   def create
     @product=Product.new(product_params)
     if @product.save
+      if params[:photos] != nil
+        params[:photos]['image'].each do |a|
+          @photo = @product.photos.create(:image => a)
+        end
+      end
       redirect_to admin_products_path
     else
       render :new
@@ -27,6 +33,7 @@ class Admin::ProductsController < ApplicationController
 
   def show
     @product=Product.find(params[:id])
+    @photos = @product.photos.all
   end
 
   def edit
@@ -36,7 +43,15 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product=Product.find(params[:id])
-    if @product.update(product_params)
+    if params[:photos] != nil
+      @product.photos.destroy_all
+      params[:photos]['image'].each do |a|
+        @picture = @product.photos.create(:image => a)
+      end
+      @product.update(product_params)
+      redirect_to admin_products_path
+
+    elsif @product.update(product_params)
       redirect_to admin_products_path
     else
       render :edit

@@ -405,6 +405,7 @@ body{
 		opacity:0.70;
 		-webkit-transition: all 0.5s;
 		transition: all 0.5s;
+
 	}
 	.thumbnail:hover{
 		opacity:1.00;
@@ -509,3 +510,9 @@ footer {
  .google{
      background-color:#f63e28;
  }
+.thumbnail > img, .thumbnail a > img{
+  height: 200px;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+  border: none;
+}

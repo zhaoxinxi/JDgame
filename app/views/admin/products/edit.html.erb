@@ -17,11 +17,22 @@
     <%= f.input :price %>
   </div>
   <% if @product.image.present? %>
-    <span>目前商品图</span> <br>
+    <span>目前主图</span> <br>
     <%= image_tag(@product.image.thumb.url) %>
   <% end %>
-  <div class="group">
-    <%= f.input :image %>
+  <div class="group label-black">
+    <%= f.input :image,as: :file %>
+    上传一张主图
+  </div>
+  <% if @product.photos.present? %>
+  <span>目前轮播图</span> <br>
+  <% end %>
+  <% @product.photos.each do |p| %>
+    <%= image_tag(p.image.thumb.url, class: "thumbnail") %>
+  <% end %>
+  <div class="group label-black">
+    <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>
+    上传4张轮播图
   </div>
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 <% end %>

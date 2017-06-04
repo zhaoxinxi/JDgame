@@ -19,6 +19,9 @@
   </div>
   <div class="group label-black">
     <%= f.input :image,as: :file %>
+    上传一张主图
+    <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>
+    上传4张轮播图
   </div>
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 <% end %>
