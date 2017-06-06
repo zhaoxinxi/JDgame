@@ -3,7 +3,10 @@ class ProductsController < ApplicationController
     @categories = Category.all
     @products = Product.all
     if params[:category].present?
-      @products = @products.where(category_id: params[:category])
+
+      @category = Category.find_by(name: params[:category]) #找出是哪个category
+
+      @products = Product.where(:category => @category) #找出这个category下的Job
     end
   end
 

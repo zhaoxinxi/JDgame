@@ -20,20 +20,19 @@ u.is_admin = false
 u.save
 
 
-c = Category.new
-c.name = "客厅"
-c.save
-
-c = Category.new
-c.name = "卧室"
-c.save
-
+f_name = ["羊羔绒地毯","短毛绒地毯","长毛绒地毯","动物纹地毯","几何纹地毯","混染地毯"]
+for i in 0..5 do
+  Category.create!(
+  name: f_name [i],
+  )
+end
 
 
-f_title = ["客厅1","客厅2","客厅3","卧室1","卧室2","卧室3"]
+
+f_title = ["羊羔绒地毯","短毛绒地毯","长毛绒地毯","动物纹地毯","几何纹地毯","混染地毯"]
 f_uantity = [10,20,30,10,20,20]
 f_price = [50,50,100,100,200,200]
-f_category_id = [1,1,1,2,2,2]
+f_category_id = [1,2,3,4,5,6]
 
 
 
