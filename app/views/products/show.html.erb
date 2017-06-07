@@ -93,5 +93,14 @@
         </div>
       </div>
     </div>
+    买家评价
+    <div >
+      <% @posts.each do |p|%>
+        <div class="">
+          <%= p.created_at %>
+          <%= p.description %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
