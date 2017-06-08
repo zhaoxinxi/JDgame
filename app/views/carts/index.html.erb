@@ -1,90 +1,78 @@
-<div class="row">
-  <div class="col-md-12">
-    <%= link_to("清空购物车",clean_carts_path ,
-                method: :delete , class: "pull-right",
-                style:"text-decoration: uderline;",
-                data: {confirm:"你确定清空整个购物车吗"} )%>
+<div class="w1200 clearfix bc mt20">
 
-    <h2> 购物车 </h2>
+    <ul class="cartProducts-title clearfix bg-gray border">
+      <li class="tc fl cartProducts-title-msg">商品信息</li>
+      <li class="tc fl cartProducts-title-price">单价</li>
+      <li class="tc fl cartProducts-title-total">数量</li>
+      <li class="tc fl cartProducts-title-operation">操作</li>
+    </ul>
+<hr>
 
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th colspan="2">商品资讯</th>
-          <th>单价</th>
-          <th>数量</th>
-          <th>操作</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <% current_cart.cart_items.each do |cart_item| %>
-          <tr>
-            <td>
-              <%= link_to product_path(cart_item.product) do %>
-                <% if cart_item.product.image.present? %>
-                  <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                <% end %>
+      <div class="cartProducts-list">
+              <% current_cart.cart_items.includes(:product).each do |cart_item| %>
+                <div class="cartProducts-listItem clearfix pt20 pb20 mb10 border">
+                  <div class="item-pic fl  ml30">
+                    <%= link_to product_path(cart_item.product) do %>
+                      <% if cart_item.product.image.present? %>
+                        <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                  <div class="item-price fl tc"><%= cart_item.product.price %></div>
+                  <div class="item-total fl tc">
+                    <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+                     <%= f.select :quantity, 1..cart_item.product.quantity %>
+                     <%= f.submit "更新", data: { disable_with: "Submiting..." } %>
+                   <% end %>
+                 </div>
+                  <div class="item-operation fl tc">
+                    <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                      <i class="fa fa-trash"></i>
+                    <% end %>
+                  </div>
+                </div>
               <% end %>
-            </td>
-            <td>
-              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
-            </td>
-            <td>
-              <%= cart_item.product.price %>
-            </td>
-            <td>
-            <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
-               <%= f.select :quantity, 1..cart_item.product.quantity %>
-               <%= f.submit "更新", data: { disable_with: "Submiting..." } %>
-             <% end %>
-            </td>
-             <td>
-               <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
-                 <i class="fa fa-trash"></i>
-               <% end %>
-             </td>
-
-          </tr>
-        <% end %>
-
-      </tbody>
-    </table>
-
-    <hr>
-    <div class="">
-      <%  @coupons.each do |c| %>
-       <div class="">
-         暗号：<b><%= c.code %></b> 功能：<b><%= c.description %><br></b>
-         有效期：<%= c.valid_from %>到<b><%= c.valid_until %></b>
-       </div>
-
-      <% end %>
-    </div>
-    <hr>
-     <%= simple_form_for current_cart, url: cart_path(current_cart) do |f| %>
-        <%= f.input :code,:label => "输入暗号，享受优惠" %>
-        <%= f.submit "核对暗号",data: { disable_with: "Submiting..." } %>
-     <% end %>
-     正在使用暗号为<b><%=current_cart.code %></b>的优惠券，
-
-    <div class="total clearfix">
-      <span class="pull-right">
-        商品总计<%= render_cart_total_price(current_cart)%>RMB
-      </span>
-    </div>
-    <div class="total clearfix">
-       <span class="pull-right">
-         实付金额<b><%= render_cart_turetotal_price(current_cart) %></b>RMB
-       </span>
-    </div>
-
-    <hr>
-
-    <div class="checkout clearfix">
-      <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
-    </div>
-  </div>
 </div>
+
+        <div class="">
+          <%  @coupons.each do |c| %>
+           <div class="">
+             暗号：<b><%= c.code %></b> 功能：<b><%= c.description %><br></b>
+             有效期：<%= c.valid_from %>到<b><%= c.valid_until %></b>
+           </div>
+
+          <% end %>
+          <div>
+             <span class="pull-right">
+               实付金额<b style="font-size:20px;"><%= render_cart_turetotal_price(current_cart) %></b>RMB
+             </span>
+          </div>
+          <div>
+            <span class="pull-right">
+              商品总计<b style="font-size:20px;"><%= render_cart_total_price(current_cart)%></b>RMB,
+            </span>
+          </div>
+        </div>
+        <!-- <%= link_to("清空购物车",clean_carts_path ,
+                    method: :delete , class: "pull-right btn btn-lg btn-danger",
+                    data: {confirm:"你确定清空整个购物车吗"} )%> -->
+        <hr>
+        <div class="anhao">
+           <%= simple_form_for current_cart, url: cart_path(current_cart) do |f| %>
+              <div class="pull-left" style="width:275px;">
+                <%= f.input :code,:label => "输入暗号，享受优惠" %>
+              </div>
+              <div class="pull-left" style="margin-top:40px; margin-left:10px;">
+                <%= f.submit "核对暗号",data: { disable_with: "Submiting..." ,class:"btn btn-info"} %>
+              </div>
+           <% end %>
+        </div>
+        <!-- <div class="check-coupon">
+         核对结果：您正在使用暗号为<button class="btn btn-info",style="width:65px;height:21px;"><b><%=current_cart.code %></b></button>的优惠券
+        </div> -->
+
+          <div style="margin-top:40px;">
+            <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+          </div>
