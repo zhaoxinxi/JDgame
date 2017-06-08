@@ -1,3 +1,133 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.w1200 {
+    width: 80%;
+}
+
+.clearfix {
+    display: block;
+}
+
+.bc {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+.ml30 {
+    margin-left: 175px;
+}
+.bg-gray {
+    background: rgba(179,94,73,1);
+}
+
+.cartProducts-title {
+    height: 50px;
+    line-height: 50px;
+}
+
+.clearfix {
+    display: block;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.fl {
+    float: left;
+    display: inline;
+}
+
+.tc {
+    text-align: center;
+}
+.item-price {
+    padding-top: 26px;
+    margin-left: 120px;
+    width: 143px;
+    color: #808080;
+    font-size: 14px;
+}
+.border {
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+}
+
+.item-total {
+    padding-top: 26px;
+    width: 200px;
+    margin-left: 40px;
+
+}
+
+.item-operation {
+    padding-top: 28px;
+    width: 150px;
+}
+
+.cartProducts-title-msg {
+    width: 425px;
+}
+
+.cartProducts-title {
+    height: 50px;
+    line-height: 50px;
+}
+
+.cartProducts-title-total {
+    width: 200px;
+    margin-left: 90px;
+
+}
+
+.cartProducts-title-operation {
+    width: 150px;
+}
+
+.cartProducts-listItem {
+  background: rgba(230,243,212,1);
+}
+
+.pb20 {
+    padding-bottom: 20px;
+}
+
+
+.pt20 {
+    padding-top: 20px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.item-pic img {
+  width: 72px;
+  height: 72px;
+}
+
+.anhao label{
+    float: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: rgba(179,94,73,1);
+    font-size: 19px;
+}
+.after-box{
+  clear:left;
+}
+.check-coupon{
+  margin-top: 50px;
+}
