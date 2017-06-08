@@ -36,10 +36,6 @@ class Admin::OrdersController < ApplicationController
    def return
      @order = Order.find(params[:id])
      @order.return_good!
-     @order.product_lists.each do |p|
-       p.post.delete
-     end
-
      redirect_to :back
    end
 

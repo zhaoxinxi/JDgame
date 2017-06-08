@@ -12,7 +12,6 @@ class ProductsController < ApplicationController
 
   def show
    @product = Product.find(params[:id])
-   @posts = @product.posts.all
   end
   def add_to_cart
     @product = Product.find(params[:id])

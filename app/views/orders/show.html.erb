@@ -8,8 +8,6 @@
         <tr>
           <th width="80%">商品明细</th>
           <th>单价</th>
-          <th>评论</th>
-          <th>评论内容</th>
         </tr>
       </thead>
       <tbody>
@@ -21,21 +19,6 @@
             </td>
             <td>
               <%= product_list.product_price %>
-            </td>
-            <td>
-              <% if product_list.order.aasm_state=="shipped"%>
-                <% if product_list.post.present? %>
-                  <%= link_to("修改评论",edit_product_list_post_path(product_list,product_list.post)) %>
-                <% else %>
-                  <%= link_to("评论",new_product_list_post_path(product_list)) %>
-                <% end %>
-              <% end %>  
-            </td>
-
-            <td>
-              <% if product_list.post.present? %>
-                <%= product_list.post.description %>
-              <% end %>
             </td>
           </tr>
         <% end %>
