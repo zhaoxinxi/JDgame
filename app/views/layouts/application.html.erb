@@ -9,13 +9,14 @@
         <link href="https://fonts.googleapis.com/css?family=Metamorphous" rel="stylesheet">
     </head>
 
-    <body style="max-width:1600px; margin-left:auto; margin-right:auto;">
+    <body>
+      <div class="row">
           <div class="container-fluid">
               <%= render "common/navbar" %>
               <%= render "common/flashes" %>
               <%= yield %>
-
           </div>
             <%= render "common/footer" %>
+      </div>
     </body>
 </html>
