@@ -30,6 +30,9 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders
   end
+  resources :product_lists do
+    resources :posts
+  end
 
   resources :orders do
     member do
