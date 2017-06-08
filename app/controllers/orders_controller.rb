@@ -50,16 +50,9 @@ class OrdersController < ApplicationController
   def apply_to_cancel
     @order = Order.find(params[:id])
     # OrderMailer.apply_cancel(@order).deliver!
-    flash[:notice] = "已申请取消订单"
+    flash[:notice] = "已提交申请"
     redirect_to :back
   end
-  def destroy
-    @order = Order.find(params[:id])
-    @order.destroy
-    flash[:notice] = "已取消订单"
-    redirect_to account_orders_path
-  end
-
 
   private
 

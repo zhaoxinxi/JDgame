@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12">
 
-    <h2> 订单明细 (状态：<%= @order.aasm_state %>)</h2>
+    <h2> 订单明细 </h2>
 
     <table class="table table-bordered">
       <thead>
@@ -23,15 +23,13 @@
               <%= product_list.product_price %>
             </td>
             <td>
-              <% if product_list.order.shipped? %>
+              <% if product_list.order.aasm_state=="shipped"%>
                 <% if product_list.post.present? %>
                   <%= link_to("修改评论",edit_product_list_post_path(product_list,product_list.post)) %>
                 <% else %>
                   <%= link_to("评论",new_product_list_post_path(product_list)) %>
                 <% end %>
-              <% elsif %>
-                确认收货后可评价
-              <% end %>
+              <% end %>  
             </td>
 
             <td>
@@ -80,15 +78,11 @@
       </tbody>
     </table>
 
-    <div class="pull-left">
-      <% if @order.paid? %>
-        <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn  btn-info") %>
-      <% elsif @order.order_placed? %>
-        <%= link_to("取消订单", order_path(@order),:method => :delete, :data=>{:confirm=>"Are you sure?"},class: "btn  btn-info") %>
-      <% elsif @order.shipping? %>
-        <%= link_to("确认收货", shipped_admin_order_path(@order), class: "btn  btn-info", method: :post) %>
-      <% end %>
-    </div>
+     <div class="pull-left">
+       <% if @order.order_placed? || @order.paid? %>
+         <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn  btn-info") %>
+       <% end %>
+     </div>
 
 
      <div class="group pull-right">
