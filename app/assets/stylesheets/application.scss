@@ -54,12 +54,14 @@
 
   .navbar-default .navbar-nav > li > a {
       color: white;
+      font-family:cursive;
   }
 
   .navbar-default .navbar-nav > li > a:hover,
   .navbar-default .navbar-nav > li > a:focus {
     color: rgba(192,132,82,1);
     background-color: transparent;
+    font-family:cursive;
 }
 
 a {
@@ -133,7 +135,12 @@ a:hover, a:focus {
   padding-top:10px;
   padding-bottom:10px;
   margin-top:-20px;
-  height:520px;
+  height:560px;
+  h2, .h2 {
+  line-height: 70px;
+  margin-top: 10px;
+  font-family: 'Metamorphous', cursive;
+}
 }
   .home-header{
       font: 100 50px/42px robotothin, sans-serif;
@@ -141,17 +148,18 @@ a:hover, a:focus {
       float: left;
       margin: 0 100px 0 0;
   }
-  .photo {
+  .photo img{
       background: #fff;
       padding: 3px;
       margin-right: 50px;
+      margin-left: 15px;
       float: left;
       width: 341px;
       height: 437px;
       box-shadow: 0 0 7px rgba(0, 0, 0, 0.28);
   }
 
-  .photo2 {
+  .photo2 img{
         background: #fff;
         padding: 3px;
         float: left;
@@ -162,6 +170,7 @@ a:hover, a:focus {
 
   .content {
       background: #fff;
+      font-family:cursive;
       width: 400px;
       height: 437px;
       margin-right: 50px;
@@ -178,6 +187,7 @@ a:hover, a:focus {
     padding: 16px 0 9px 0;
     text-align: center;
     letter-spacing: 2px;
+    font-family:cursive;
 }
   .text {
     font: 400 14px/22px robotoregular;
@@ -185,6 +195,8 @@ a:hover, a:focus {
     margin: 0 0 26px 0;
     line-height: 60px;
     letter-spacing: 2px;
+    font-family:cursive;
+    text-align: center;
 }
 
 
@@ -197,6 +209,12 @@ a:hover, a:focus {
   padding-top:0px;
   margin-top: 50px;
   height:550px;
+
+  h2, .h2 {
+  line-height: 60px;
+  margin-top: -25px;
+  font-family: 'Metamorphous', cursive;
+}
 }
 
 .center2{
@@ -461,7 +479,6 @@ li{
 footer {
   background-color:#0c1a1e;
    min-height:274px;
-   font-family: 'Metamorphous', cursive;
   }
 .footer-col { margin-top:50px; }
 .logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
